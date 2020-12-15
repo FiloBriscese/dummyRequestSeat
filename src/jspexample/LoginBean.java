@@ -1,6 +1,5 @@
 package jspexample;
 
-//import sun.rmi.runtime.Log;
 
 public class LoginBean {
 

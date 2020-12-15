@@ -7,7 +7,7 @@
 <table aria-describedby="navbar">
     <th id="navbar">
         <td class="navbarLogo"><strong style="color: #2C6737; font-size: 21px">TVRide</strong></td>
-        <td class="navbarElement"><strong>Home</strong></td>
+        <td><strong>Home</strong></td>
         <td class="navbarElement"><a href="searchRide.jsp">Request Seat</a></td>
         <td class="navbarElement"><a href="seatReservations.jsp">Your Reservations</a></td>
         <%
