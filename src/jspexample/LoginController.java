@@ -2,16 +2,16 @@ package jspexample;
 
 public class LoginController {
 
-    private static LoginController INSTANCE = null;
+    private static LoginController instance = null;
 
     private LoginController() {}
 
     public static LoginController getInstance() {
-        if(INSTANCE==null) {
-            INSTANCE = new LoginController();
+        if(instance==null) {
+            instance = new LoginController();
         }
 
-        return INSTANCE;
+        return instance;
     }
 
     public LoginBean login(LoginBean bean) {

@@ -12,6 +12,7 @@ public class LoginBean {
     private String role;
 
     public LoginBean() {
+    	//non ci serve un particolare costruttore
     }
 
     public String getStudentId() {
