@@ -5,8 +5,7 @@ jdk:
 addons:
     sonarcloud:
         organization: "filobriscese"
-        token:
-            secure: "49bb058d51efd7e88fb7aa9937f7f32a5457c8d7"
+        token: "49bb058d51efd7e88fb7aa9937f7f32a5457c8d7"
 
 script:
 - ant build
