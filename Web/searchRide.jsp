@@ -1,11 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<!-- dichiarazione e instanziazione di un loginBean !-->
-<jsp:useBean id="searchBean" scope="request" class="logic.boundary.web.SearchBean"/>
-
-<!-- mappare gli attributi di un oggetto sui campi della form -->
-<jsp:setProperty name="searchBean" property="*"/>
-
 
 <html>
 	<head>
@@ -40,15 +34,36 @@
 		</table>
 		<p>cose da fare</p>
 		<ul>
-		    <li>form per la ricerca</li>
 		    <li>searchBean</li>
-		    <li>ricevere su java il form</li>
+		    <li>link form e bean</li>
+		    <li>ricevere su java i dati inseriti nella form</li>
 		    <li>rispondere al form mandando delle corse, mostrarle</li>
 		    <li>pagina dettagli corsa</li>
 		    <li>mandare richiesta prenotazione</li>
 		</ul>
-		<form action="" name="searchRide" method="POST">
-			
+		<form action="searchRide.jsp" name="searchRideForm" method="POST">
+			<table>
+				<tr>
+					<td><label for="from">From:</label></td>
+					<td><input type="text" id="from" name="from"></td>
+				</tr>
+				<tr>
+					<td><label for="to">To:</label></td>
+					<td><input type="text" id="to" name="to"></td>
+				</tr>
+				<tr>
+					<td><label for="date">Date:</label></td>
+					<td><input type="date" id="date" name="date"></td>
+				</tr>
+				<tr>
+					<td><label for="time">Time:</label></td>
+					<td><input type="time" id="time" name="time"></td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="Search"></td>
+					<!-- TODO request.getParameter cosa fa di preciso? -->
+				</tr>
+			</table>
 		</form>
 	</body>
 </html>
