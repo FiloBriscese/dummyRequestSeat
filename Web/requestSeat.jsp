@@ -1,5 +1,6 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" import="logic.boundary.web.RequestSeatWebController"%>
+<jsp:useBean id="searchBean" scope="request" class="logic.boundary.web.SearchBean"/>
+<jsp:setProperty name="searchBean" property="*"/>
 
 <html>
 	<head>
@@ -32,36 +33,41 @@
 		        </td>
 		    </tr>
 		</table>
-		<p>cose da fare</p>
+		<p> TODO cose da fare</p>
 		<ul>
-		    <li>searchBean</li>
-		    <li>link form e bean</li>
-		    <li>ricevere su java i dati inseriti nella form</li>
-		    <li>rispondere al form mandando delle corse, mostrarle</li>
-		    <li>pagina dettagli corsa</li>
-		    <li>mandare richiesta prenotazione</li>
+		    <li>  rispondere al form mandando delle corse, mostrarle</li>
+		    <li>  pagina dettagli corsa</li>
+		    <li>  mandare richiesta prenotazione</li>
+		    <li>  usare tipo di dato che descriva posizione geografica</li>
 		</ul>
-		<form action="searchRide.jsp" name="searchRideForm" method="POST">
+		<form action="requestSeat.jsp" name="searchRideForm" method="POST">
 			<table>
 				<tr>
 					<td><label for="from">From:</label></td>
-					<td><input type="text" id="from" name="from"></td>
+					<td><input type="text" id="from" name="from" required></td>
 				</tr>
 				<tr>
 					<td><label for="to">To:</label></td>
-					<td><input type="text" id="to" name="to"></td>
+					<td><input type="text" id="to" name="to" required></td>
 				</tr>
 				<tr>
 					<td><label for="date">Date:</label></td>
-					<td><input type="date" id="date" name="date"></td>
+					<td><input type="date" id="date" name="date" required></td>
 				</tr>
 				<tr>
 					<td><label for="time">Time:</label></td>
-					<td><input type="time" id="time" name="time"></td>
+					<td><input type="time" id="time" name="time" required></td>
 				</tr>
 				<tr>
-					<td><input type="submit" value="Search"></td>
-					<!-- TODO request.getParameter cosa fa di preciso? -->
+					<td><input type="submit" name="search" value="Search"></td>
+					<%
+						if (request.getParameter("search") != null) {
+							RequestSeatWebController.getInstance().stampa(searchBean);
+					%>
+		                    <jsp:forward page="searchResults.jsp"/>
+		            <%
+		                }
+		            %>
 				</tr>
 			</table>
 		</form>

@@ -40,8 +40,8 @@
 		                <input type="submit" name="login" value="Login">
 		            </div>
 		            <%
-		                if (request.getParameter("login") != null) { //
-		                    if (loginBean.validate()) {
+		                if (request.getParameter("login") != null) {
+		                    if (loginBean.validate()) {													// TODO sposta metodo da bean a web controller
 		                        session.setAttribute("userName", loginBean.getNome());
 		                        session.setAttribute("userCognome", loginBean.getCognome());
 		                        session.setAttribute("userRole", loginBean.getRole());

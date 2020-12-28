@@ -12,7 +12,7 @@ public class LoginBean {
     private String role;
 
     public LoginBean() {
-    	//non ci serve un particolare costruttore
+    	//needed for JSP to work
     }
 
     public String getStudentId() {

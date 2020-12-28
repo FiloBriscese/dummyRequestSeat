@@ -1,5 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<%
+	if (session.getAttribute("userName").equals(null)) {
+%>
+		<jsp:forward page="home.jsp"/>
+<%	} %>
+
 <html>
 	<head>
 	    <title>TVRide - Your Profile</title>
@@ -9,7 +15,7 @@
 		    <tr align="center">
 		        <td width="10px" align="left"><b style="color: #2C6737; font-size: 21px">TVRide</b></td>
 		        <td width="100px"><a href="home.jsp">Home</a></td>
-		        <td width="100px"><a href="searchRide.jsp">Request Seat</a></td>
+		        <td width="100px"><a href="requestSeat.jsp">Request Seat</a></td>
 		        <td width="100px"><a href="seatRequests.jsp">Your Requests</a></td>
 		        <%
 		            if (session.getAttribute("userRole").equals("Passenger")) {

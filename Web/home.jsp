@@ -10,7 +10,7 @@
 		    <tr align="center">
 		        <td width="10px" align="left"><strong style="color: #2C6737; font-size: 21px">TVRide</strong></td>
 		        <td width="100px"><strong>Home</strong></td>
-		        <td width="100px"><a href="searchRide.jsp">Request Seat</a></td>
+		        <td width="100px"><a href="requestSeat.jsp">Request Seat</a></td>
 		        <td width="100px"><a href="seatRequests.jsp">Your Requests</a></td>
 		        <%
 		            if (session.getAttribute("userRole").equals("Passenger")) {
