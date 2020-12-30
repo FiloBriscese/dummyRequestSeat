@@ -1,4 +1,4 @@
-package logic.boundary.web;
+package bean;
 
 //import java.time.LocalDateTime;	// https://www.html.it/pag/61171/gestione-date-in-java/
 
@@ -6,9 +6,9 @@ public class SearchBean {
 	
 	private String from;
 	private String to;
-	private String date;	//format: yyyy-mm-dd
-	private String time;	//format: hh:mm
-	
+	private String date;	//format: yyyy-mm-dd	vedi riga 3
+	private String time;	//format: hh:mm			vedi riga 3
+
 	
 	public SearchBean() {
 		//needed for JSP to work

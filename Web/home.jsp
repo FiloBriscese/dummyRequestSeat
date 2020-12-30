@@ -6,7 +6,7 @@
 	    <link href="css/style.css" rel="stylesheet" type="text/css">
 	</head>
 	<body style="background-color: #F2EDE4">
-		<table width="100%">
+		<table style="width:100%">
 		    <tr align="center">
 		        <td width="10px" align="left"><strong style="color: #2C6737; font-size: 21px">TVRide</strong></td>
 		        <td width="100px"><strong>Home</strong></td>
@@ -34,8 +34,10 @@
 		<h3>Ciao <%=session.getAttribute("userName") %> <%=session.getAttribute("userCognome")%></h3>
 		<br>
 		<p>qui mettere tipo: la tua prossima corsa è il XX alle XX da X a X (come Passeggero/Driver)</p>
-		<ul>colori da usare:
-		    <li>f2ede4</li>
+		
+		<p>colori usati</p>
+		<ul>
+			<li>f2ede4</li>
 		    <li style="color: #449343">449343</li>
 		    <li style="color: #2c6737">2c6737</li>
 		    <li style="color: #275840">275840</li>

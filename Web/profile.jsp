@@ -11,7 +11,7 @@
 	    <title>TVRide - Your Profile</title>
 	</head>
 	<body style="background-color: #F2EDE4">
-		<table width="100%">
+		<table style="width:100%">
 		    <tr align="center">
 		        <td width="10px" align="left"><b style="color: #2C6737; font-size: 21px">TVRide</b></td>
 		        <td width="100px"><a href="home.jsp">Home</a></td>

@@ -1,9 +1,13 @@
 package logic.boundary.web;
 
+import bean.ResultBean;
+import bean.SearchBean;
+import logic.control.RequestSeatController;
 
 public class RequestSeatWebController {
 
     private static RequestSeatWebController instance = null;
+    
 
     private RequestSeatWebController() {}
 
@@ -15,8 +19,13 @@ public class RequestSeatWebController {
         return instance;
     }
     
-    public void stampa(SearchBean bean) {
-    	bean.setTo("pippo");
-    	System.out.println(bean.getFrom() + bean.getTo() + bean.getDate() + bean.getTime());
+    public ResultBean cerca(SearchBean bean) {
+    	
+    	System.out.println("reqseatWebController | searching for: " + bean.getFrom() + " " + bean.getTo() + " " + bean.getDate() + " " + bean.getTime());
+    	RequestSeatController logicController = new RequestSeatController();
+    	ResultBean results = new ResultBean();
+    	results = logicController.searchRides(bean);
+    	
+    	return results;
     }
 }

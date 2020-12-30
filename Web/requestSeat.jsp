@@ -1,6 +1,7 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" import="logic.boundary.web.RequestSeatWebController"%>
-<jsp:useBean id="searchBean" scope="request" class="logic.boundary.web.SearchBean"/>
+<%@ page contentType="text/html;charset=UTF-8" language="java" import="logic.boundary.web.RequestSeatWebController, bean.ResultBean"%>
+<jsp:useBean id="searchBean" scope="request" class="bean.SearchBean"/>
 <jsp:setProperty name="searchBean" property="*"/>
+<jsp:useBean id="resultBean" scope="request" class="bean.ResultBean"/>
 
 <html>
 	<head>
@@ -8,7 +9,7 @@
 	    <link href="css/style.css" rel="stylesheet" type="text/css">
 	</head>
 	<body style="background-color: #F2EDE4">
-		<table width="100%">
+		<table style="width:100%">
 		    <tr align="center">
 		        <td width="10px" align="left"><b style="color: #2C6737; font-size: 21px">TVRide</b></td>
 		        <td width="100px"><a href="home.jsp">Home</a></td>
@@ -61,8 +62,9 @@
 				<tr>
 					<td><input type="submit" name="search" value="Search"></td>
 					<%
-						if (request.getParameter("search") != null) {
-							RequestSeatWebController.getInstance().stampa(searchBean);
+					if (request.getParameter("search") != null) {
+							resultBean = RequestSeatWebController.getInstance().cerca(searchBean);
+							// TODO non viene passato resultBean a searchResult.jsp
 					%>
 		                    <jsp:forward page="searchResults.jsp"/>
 		            <%
