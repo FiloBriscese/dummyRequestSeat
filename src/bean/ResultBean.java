@@ -1,22 +1,23 @@
 package bean;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class ResultBean {
 
-	private ArrayList<RideBean> rides;
+	private List<RideBean> rides;
 
 	
 	public ResultBean(){
-		this.rides = new ArrayList<RideBean>();
+		this.rides = new ArrayList<>();
 	}
 	
-	public ArrayList<RideBean> getRides() {
+	public List<RideBean> getRides() {
 		return rides;
 	}
 	
-	public void setRides(ArrayList<RideBean> list) {
+	public void setRides(List<RideBean> list) {
 		this.rides = list;
 	}
 	

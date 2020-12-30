@@ -12,9 +12,19 @@
 }
 
 .navbarElement{
-	color: red;
+	width: 100px;
+}
+
+.navbarLogout{
+	width: 50px;
+	font-weight: bolder;
+	text-align: right;
 }
 
 .navbarLogo{
-	width: 10px;
+	width: 50px;
+	text-align: left;
+	font-size: 21px;
+	color: #2C6737;
 }
+

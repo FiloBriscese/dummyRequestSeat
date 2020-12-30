@@ -23,7 +23,7 @@ public class RequestSeatWebController {
     	
     	System.out.println("reqseatWebController | searching for: " + bean.getFrom() + " " + bean.getTo() + " " + bean.getDate() + " " + bean.getTime());
     	RequestSeatController logicController = new RequestSeatController();
-    	ResultBean results = new ResultBean();
+    	ResultBean results;
     	results = logicController.searchRides(bean);
     	
     	return results;

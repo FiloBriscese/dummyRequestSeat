@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" import="logic.boundary.web.RequestSeatWebController, bean.ResultBean"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" import="logic.boundary.web.RequestSeatWebController"%>
 <jsp:useBean id="searchBean" scope="request" class="bean.SearchBean"/>
 <jsp:setProperty name="searchBean" property="*"/>
 <jsp:useBean id="resultBean" scope="request" class="bean.ResultBean"/>
@@ -36,7 +36,6 @@
 		</table>
 		<p> TODO cose da fare</p>
 		<ul>
-		    <li>  rispondere al form mandando delle corse, mostrarle</li>
 		    <li>  pagina dettagli corsa</li>
 		    <li>  mandare richiesta prenotazione</li>
 		    <li>  usare tipo di dato che descriva posizione geografica</li>
@@ -63,13 +62,12 @@
 					<td><input type="submit" name="search" value="Search"></td>
 					<%
 					if (request.getParameter("search") != null) {
-							resultBean = RequestSeatWebController.getInstance().cerca(searchBean);
-							// TODO non viene passato resultBean a searchResult.jsp
+							resultBean.setRides(RequestSeatWebController.getInstance().cerca(searchBean).getRides());
 					%>
 		                    <jsp:forward page="searchResults.jsp"/>
-		            <%
-		                }
-		            %>
+					<%
+					}
+					%>
 				</tr>
 			</table>
 		</form>

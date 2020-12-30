@@ -3,35 +3,60 @@
 <jsp:useBean id="resultBean" scope="request" class="bean.ResultBean"/>
 
 <!-- TODO check log in al caricamento di OGNI pagina e implementare log out-->
-<%
-	if (session.getAttribute("userName").equals(null)) {
-%>
-		<jsp:forward page="index.jsp"/>
-<%	} %>
 
-<p>la tua ricerca. hai inviato questo searchBean:</p>
-<br>
-<p> da: <%=searchBean.getFrom()%></p>
-<p> a: <%=searchBean.getTo()%></p>
-<p> il: <%=searchBean.getDate()%></p>
-<p> alle: <%=searchBean.getTime()%></p>
-<p> CANCELLAMI result bean: <%=resultBean.getProva()%></p>
 
-<br>
-<h3>i risultati ottenuti:</h3>
-<ul>
-
-<!-- TODO ResultBean non arriva con i dati da requestSeat.jsp -->
-	<%
-	// TODO per ogni risultato mostra un pezzo di html con i dettagli della corsa -->
-	for(RideBean ride : resultBean.getRides()){
-		ride.stampa();
-	%>
-		<li><%= ride.getRideId() %> <%= ride.getOwner() %> <%= ride.getSource() %></li>
-	<%
-	}
-	%>
-
-</ul>
-
-<!-- TODO creare metodo nel WebController, creare Controller del caso d'uso e le entity.-->
+<html>
+	<head>
+	    <title>TVRide - Request Seat 2</title>
+	    
+	    <style>
+	    .card {
+		  /* Add shadows to create the "card" effect */
+		  width: 30%;
+		  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+		  transition: 0.3s;
+		  border-radius: 5px;
+		  background-color: #449343;
+		  margin-left: 16px;
+		}
+		
+		/* On mouse-over, add a deeper shadow */
+		.card:hover {
+		  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+		}
+		
+		/* Add some padding inside the card container */
+		.container {
+		  padding: 16px 16px 16px 32px;
+		}
+	    </style>
+	    
+	</head>
+	<body style="background-color: #F2EDE4">
+		<p>la tua ricerca. hai inviato questo searchBean:</p>
+		<ul>
+			<li>da: <%=searchBean.getFrom()%></li>
+			<li>a: <%=searchBean.getTo()%></li>
+			<li>il: <%=searchBean.getDate()%></li>
+			<li>alle: <%=searchBean.getTime()%></li>
+		</ul>
+		
+		<h3>i risultati ottenuti:</h3>
+		<br>
+			<%
+			for(RideBean ride : resultBean.getRides()){
+			%>
+				<div class="card">
+					<div class="container">
+						<strong><%= ride.getOwner() %></strong> [RIDE#<%= ride.getRideId() %>]<br>
+						From: <%= ride.getSource() %><br>
+						To: <%= ride.getDestination() %><br> 
+						<%= ride.getDate() %> | <%= ride.getTime() %> <button type="button" onclick="alert('Hello world!')" style="float: right">Details</button>
+					</div>
+				</div>
+				<br>
+			<%
+			}
+			%>
+	</body>
+</html>
