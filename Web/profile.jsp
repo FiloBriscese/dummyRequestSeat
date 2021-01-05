@@ -1,10 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<%
-	if (session.getAttribute("userName").equals(null)) {
-%>
-		<jsp:forward page="home.jsp"/>
-<%	} %>
+<% if(session.getAttribute("userId") == null){ 	// se l'utente non è loggato, mandalo alla pagina di login %>
+	<jsp:forward page="index.jsp" />
+<% } %>
 
 <html>
 	<head>

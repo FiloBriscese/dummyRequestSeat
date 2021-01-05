@@ -1,4 +1,4 @@
-package bean;
+package logic.bean;
 
 public class RideBean {
 
@@ -7,8 +7,8 @@ public class RideBean {
 	private String owner;	// il driver
 	private String source;
 	private String destination;
-	private String date;	// usare tipo LocalDateTime?
-	private String time;
+	private String date;	// yyyy-mm-dd
+	private String time;	// hh:mm
 	
 	
 	public RideBean() {

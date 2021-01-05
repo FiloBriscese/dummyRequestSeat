@@ -1,7 +1,7 @@
 package logic.boundary.web;
 
-import bean.ResultBean;
-import bean.SearchBean;
+import logic.bean.ResultBean;
+import logic.bean.SearchBean;
 import logic.control.RequestSeatController;
 
 public class RequestSeatWebController {
@@ -19,13 +19,22 @@ public class RequestSeatWebController {
         return instance;
     }
     
-    public ResultBean cerca(SearchBean bean) {
+    public ResultBean search(SearchBean searchBean) {
     	
-    	System.out.println("reqseatWebController | searching for: " + bean.getFrom() + " " + bean.getTo() + " " + bean.getDate() + " " + bean.getTime());
+    	// convertire il searchBean nei tipi di dati usati dal controller
+    	
     	RequestSeatController logicController = new RequestSeatController();
     	ResultBean results;
-    	results = logicController.searchRides(bean);
+    	results = logicController.searchRides(searchBean);
     	
     	return results;
     }
+    
+    public boolean checkSearchParameters(SearchBean searchBean) {
+    	// verifica che la data non sia precedente ad ora
+    	
+    	
+    	return false;
+    }
+    
 }

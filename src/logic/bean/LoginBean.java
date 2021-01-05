@@ -1,5 +1,6 @@
-package jspexample;
+package logic.bean;
 
+import logic.boundary.web.LoginController;
 
 public class LoginBean {
 
